@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbnfhigxmvluw"]
+
+[ext_resource type="Texture2D" uid="uid://bahw57750etrl" path="res://Player/Sprites/Sprites.png" id="1_7vp3v"]
+[ext_resource type="Script" uid="uid://d0kcao66eapp" path="res://Scripts/central_explosion.gd" id="1_78kel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78kel"]
+atlas = ExtResource("1_7vp3v")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq6fe"]
+atlas = ExtResource("1_7vp3v")
+region = Rect2(112, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvblt"]
+atlas = ExtResource("1_7vp3v")
+region = Rect2(32, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3xsv"]
+atlas = ExtResource("1_7vp3v")
+region = Rect2(112, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75i2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78kel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq6fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvblt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3xsv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kii1d"]
+size = Vector2(32, 32)
+
+[node name="CentralExplosion" type="Area2D"]
+collision_layer = 32
+collision_mask = 69
+script = ExtResource("1_78kel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_75i2y")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kii1d")
+
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="RayCastUp" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, -16)
+collision_mask = 20
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(16, 0)
+collision_mask = 20
+collide_with_areas = true
+
+[node name="RayCastDown" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, 16)
+collision_mask = 20
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(-16, 0)
+collision_mask = 20
+collide_with_areas = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
