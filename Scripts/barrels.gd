@@ -9,11 +9,11 @@ var is_destroying := false
 
 func destroy():
 	if is_destroying:
-		return # já está destruindo, evita múltiplas chamadas
+		return 
 	is_destroying = true
 
 	collision_shape_2d.disabled = true
-	set_deferred("monitoring", false) # para evitar novas colisões com explosões
+	set_deferred("monitoring", false) 
 	animated_sprite_2d.play("destroy")
 
 

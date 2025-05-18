@@ -19,7 +19,6 @@ var animation_directions: Array[Vector2] = [
 
 const DIRECTIONAL_EXPLOSION = preload("res://directional_explosion.tscn")
 
-#explosion size for all directions
 var size = 1
 const TILE_SIZE = 32
 
@@ -31,19 +30,19 @@ func check_raycasts():
 		check_raycast_for_direction(animation_names[i], raycasts[i], animation_directions[i])
 #	
 
-func check_raycast_for_direction(animation_name: String, raycast: RayCast2D, animation_direction: Vector2):
-	raycast.target_position = raycast.target_position * size
+func check_raycast_for_direction(animation_name: String, raycast: RayCast2D, animation_direction: Vector2):	
+	raycast.target_position = animation_direction.normalized() * TILE_SIZE * size
 	raycast.force_raycast_update()
+
 	if !raycast.is_colliding():
 		create_explosion_for_size(size, animation_name, animation_direction)
-	
 	else: 
 		var size_of_explosion = calculate_size_of_explosion(raycast)
 		var collider = raycast.get_collider()
 		if size_of_explosion != null:
 			create_explosion_for_size(size_of_explosion, animation_name, animation_direction)
 		execute_explosion_collision(collider)
-	
+
 
 func create_explosion_for_size(size: int, animation_name: String, animation_position: Vector2):
 	for i in size: 

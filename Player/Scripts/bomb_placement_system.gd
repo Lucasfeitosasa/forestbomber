@@ -4,7 +4,7 @@ class_name BombPlacementSystem
 
 const BOMB_SCENE = preload("res://bomb.tscn")
 
-const TILE_SIZE = 32
+const TILE_SIZE = 16
 
 var player: Player = null
 var bombs_placed = 0
@@ -27,7 +27,6 @@ func place_bomb():
 	get_tree().root.add_child(bomb)
 	bombs_placed += 1
 	bomb.tree_exiting.connect(on_bomb_exploded)
-
 
 func on_bomb_exploded():
 	bombs_placed -= 1
