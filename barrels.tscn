@@ -1,7 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpek3361ysppl"]
+[gd_scene load_steps=14 format=3 uid="uid://cpek3361ysppl"]
 
 [ext_resource type="Script" uid="uid://dvmi7cypyf7d0" path="res://Scripts/barrels.gd" id="1_2o06s"]
 [ext_resource type="Texture2D" uid="uid://c8in72k0f17k1" path="res://Tile Maps/Sprites/Barrels_destroyed.png" id="2_cnrxk"]
+[ext_resource type="Texture2D" uid="uid://bahw57750etrl" path="res://Player/Sprites/Sprites.png" id="3_cnrxk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slqjr"]
+atlas = ExtResource("2_cnrxk")
+region = Rect2(0, 0, 42, 69)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kf3gn"]
 atlas = ExtResource("2_cnrxk")
@@ -27,12 +32,20 @@ region = Rect2(168, 0, 42, 69)
 atlas = ExtResource("2_cnrxk")
 region = Rect2(210, 0, 42, 69)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_slqjr"]
-atlas = ExtResource("2_cnrxk")
-region = Rect2(0, 0, 42, 69)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jqhf"]
+atlas = ExtResource("3_cnrxk")
+region = Rect2(96, 144, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3jqhf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slqjr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kf3gn")
@@ -51,37 +64,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_upsqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jqhf")
 }],
 "loop": false,
-"name": &"Destroy",
+"name": &"destroy",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_slqjr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apwbw"]
 size = Vector2(32, 32)
 
-[node name="Barrels" type="Area2D"]
+[node name="Barrels" type="StaticBody2D"]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 32
 script = ExtResource("1_2o06s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_3jqhf")
-animation = &"Destroy"
+animation = &"destroy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_apwbw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_apwbw")

@@ -49,12 +49,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3tha"]
 size = Vector2(32, 32)
 
-[node name="Bomb" type="Area2D"]
+[node name="Bomb" type="StaticBody2D"]
+collision_layer = 8
 script = ExtResource("1_4fn8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.98023e-08, 4)
-scale = Vector2(1.64531, 1.64531)
+position = Vector2(-2.84217e-14, -8)
+scale = Vector2(1.81133, 1.81133)
 sprite_frames = SubResource("SpriteFrames_r0wls")
 autoplay = "default"
 frame = 4
