@@ -78,3 +78,7 @@ func die():
 	animation_player.play("die")
 	direction = Vector2.ZERO
 	set_process_input(false)
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animation_player.animation == "die":
+		queue_free()
