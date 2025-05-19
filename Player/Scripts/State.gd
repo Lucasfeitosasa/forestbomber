@@ -5,8 +5,6 @@ static var player: Player
 func _ready():
 	pass
 	
-
-
 func Enter() -> void:
 	pass
 

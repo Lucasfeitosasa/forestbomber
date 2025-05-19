@@ -73,5 +73,15 @@ func execute_explosion_collision(collider: Object):
 	if collider is Barrels:
 		(collider as Barrels).destroy()
 
+
+
 func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		(body as Player).die()
+		
+	if body is Enemy:
+		(body as Enemy).die()

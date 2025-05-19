@@ -5,7 +5,6 @@ class_name State_Walk extends State
 @onready var idle : State = $"../Idle"
 
 
-
 func Enter() -> void:
 	player.UpdateAnimation("walk")
 	pass

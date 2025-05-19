@@ -11,3 +11,9 @@ func play_animation(animation_name: String):
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		(body as Player).die()
+
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Enemy:
+		(area as Enemy).die()

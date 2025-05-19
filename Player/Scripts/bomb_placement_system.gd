@@ -20,7 +20,6 @@ func place_bomb():
 	var bomb = BOMB_SCENE.instantiate()
 	var player_position = player.position
 
-	# Alinha a bomba ao centro do tile mais próximo (32x32)
 	var bomb_position = player_position.snapped(Vector2(32, 32))
 	bomb.position = bomb_position
 
