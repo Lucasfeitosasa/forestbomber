@@ -47,7 +47,6 @@ func check_raycast_for_direction(animation_name: String, raycast: RayCast2D, ani
 func create_explosion_for_size(size: int, animation_name: String, animation_position: Vector2):
 	for i in size: 
 		if i < size - 1:
-#				until we hit the last tile create middle animations
 			create_explosion_animation_slice("%s_middle" % animation_name, animation_position * (i+1))
 		else: 
 			create_explosion_animation_slice("%s_end" % animation_name, animation_position * (i+1))

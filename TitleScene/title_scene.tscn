@@ -1,0 +1,363 @@
+[gd_scene load_steps=16 format=3 uid="uid://hxwr2dngotjx"]
+
+[ext_resource type="PackedScene" uid="uid://da3of1mdp3o7p" path="res://TitleScene/tile_map.tscn" id="1_4bjwq"]
+[ext_resource type="Script" uid="uid://bdjnjljnbedae" path="res://TitleScene/title_scene.gd" id="1_r4cus"]
+[ext_resource type="AudioStream" uid="uid://55fxbsuw8j2d" path="res://TitleScene/audio/waves.mp3" id="2_88d1l"]
+[ext_resource type="Texture2D" uid="uid://cqbew0rwf5pd3" path="res://TitleScene/sprites/Sem Título-1.png" id="2_d43d1"]
+[ext_resource type="AudioStream" uid="uid://ds3dfy1v5u861" path="res://TitleScene/audio/menu_focus.wav" id="3_cx0ot"]
+[ext_resource type="FontFile" uid="uid://bpvr3yrsyaiyl" path="res://TitleScene/font/Gamer.ttf" id="5_88d1l"]
+
+[sub_resource type="FontVariation" id="FontVariation_r4cus"]
+base_font = ExtResource("5_88d1l")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d43d1"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(0, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cydky"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(341, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4cus"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(682, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ubs0"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(0, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88d1l"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(341, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx0ot"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(682, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75f4d"]
+atlas = ExtResource("2_d43d1")
+region = Rect2(0, 682, 341, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vy3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cydky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4cus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ubs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88d1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx0ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75f4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d43d1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource("1_r4cus")
+music = ExtResource("2_88d1l")
+button_focus_audio = ExtResource("3_cx0ot")
+
+[node name="TileMap" parent="." instance=ExtResource("1_4bjwq")]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.513726)
+
+[node name="Button_Start_Game" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.5
+anchor_right = 0.48
+anchor_bottom = 0.5
+offset_left = -78.4
+offset_top = 41.0
+offset_right = 73.6
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_r4cus")
+text = "Start Game"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+position = Vector2(-32, 144)
+sprite_frames = SubResource("SpriteFrames_0vy3h")
+autoplay = "default"
+frame_progress = 0.0155469
+offset = Vector2(256, -72)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4

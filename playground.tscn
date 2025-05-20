@@ -46,5 +46,13 @@ position = Vector2(328, 56)
 [node name="Barrels5" parent="Grounds" instance=ExtResource("3_m8u5f")]
 position = Vector2(424, 88)
 
-[node name="Slime" parent="." instance=ExtResource("4_is3ju")]
-position = Vector2(352, 80)
+[node name="enemies" type="Node" parent="."]
+
+[node name="Slime" parent="enemies" instance=ExtResource("4_is3ju")]
+position = Vector2(352, 96)
+
+[node name="Slime3" parent="enemies" instance=ExtResource("4_is3ju")]
+position = Vector2(128, 160)
+
+[node name="Slime2" parent="enemies" instance=ExtResource("4_is3ju")]
+position = Vector2(288, 224)

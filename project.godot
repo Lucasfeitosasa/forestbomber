@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="ForestBomber"
-run/main_scene="res://playground.tscn"
+run/main_scene="uid://hxwr2dngotjx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*res://00_globals/GlobalLevelManager.gd"
+LevelManager="*res://00_globals/global_level_manager.gd"
+GlobalAudioManager="*res://00_globals/global_audio_manager.gd"
+SceneTransition="*res://GUI/scene_transition.gd"
+PauseMenu="*res://GUI/pause_menu/pause_menu.gd"
 
 [display]
 

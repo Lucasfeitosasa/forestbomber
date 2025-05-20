@@ -14,15 +14,16 @@ var tile_map: TileMap
 
 func _ready() -> void:
 	tile_map = get_tree().get_first_node_in_group("tilemap")
+	change_sprite_direction(direction)
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
-	
+
 	if direction == Vector2.LEFT or direction == Vector2.RIGHT:
 		position.y = roundf(position.y / 16) * 16
 	elif direction == Vector2.UP or direction == Vector2.DOWN:
 		position.x = roundf(position.x / 16) * 16
-	
+
 	if roundi(position.x) % 16 == 0 && roundi(position.y) % 16 == 0 && \
 		current_change_direction_timeout >= change_direction_timeout && \
 		randf() <= direction_intersection_change_chance:
@@ -32,7 +33,6 @@ func _physics_process(delta: float) -> void:
 	current_change_direction_timeout += delta
 
 func change_direction_at_intersection(current_direction: Vector2):
-	print("Trocando direção...")
 	direction = calculate_new_direction(current_direction, true)
 
 func calculate_new_direction(current_direction: Vector2, prevent_backtracking: bool) -> Vector2:
@@ -49,20 +49,18 @@ func calculate_new_direction(current_direction: Vector2, prevent_backtracking: b
 
 	if possible_directions.size() > 0:
 		var new_direction = possible_directions[randi_range(0, possible_directions.size() - 1)]
-		print("Nova direção:", new_direction)
 		change_sprite_direction(new_direction)
 		return new_direction
 
-	print("Nenhuma nova direção possível. Mantendo:", current_direction)
 	return current_direction
 
 func is_direction_blocked(direction_to_check: Vector2) -> bool:
 	var base_position = round(position / 16) * 16 + direction_to_check * 16
 	
 	var offsets = [
-		Vector2(0, 0),              
-		Vector2(0, -7),              
-		Vector2(0, 7),               
+		Vector2(0, 0),
+		Vector2(0, -7),
+		Vector2(0, 7),
 	]
 
 	if direction_to_check.x != 0:
@@ -97,8 +95,15 @@ func _on_body_entered(body: Node) -> void:
 		direction = calculate_new_direction(direction, false)
 
 func change_sprite_direction(new_direction: Vector2):
-	if [Vector2.LEFT, Vector2.RIGHT].has(new_direction):
+	if new_direction.x != 0:
+		animated_sprite_2d.animation = "walk_side"
 		animated_sprite_2d.scale.x = sign(new_direction.x)
+	elif new_direction.y < 0:
+		animated_sprite_2d.animation = "walk_up"
+	elif new_direction.y > 0:
+		animated_sprite_2d.animation = "walk_down"
+	
+	animated_sprite_2d.play()
 
 func die():
 	animated_sprite_2d.play("die")
@@ -106,7 +111,6 @@ func die():
 	speed = 0
 	direction = Vector2.ZERO
 	set_collision_mask_value(1, false)
-
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "die":
