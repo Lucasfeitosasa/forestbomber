@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bvn1uelqf8nog"]
+[gd_scene load_steps=55 format=3 uid="uid://dtkv4ekd36g67"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hb8ge"]
 region = Rect2(0, 0, 64, 64)
