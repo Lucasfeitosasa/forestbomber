@@ -9,7 +9,7 @@
 position = Vector2(0, 16)
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
-position = Vector2(256, 144)
+position = Vector2(-8, 32)
 
 [node name="Grounds" parent="." groups=["tilemap"] instance=ExtResource("2_wt17y")]
 position = Vector2(-8, -8)
@@ -36,6 +36,72 @@ position = Vector2(392, 184)
 
 [node name="Barrels7" parent="Grounds" instance=ExtResource("3_m8u5f")]
 position = Vector2(200, 120)
+
+[node name="Barrels30" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(360, 280)
+
+[node name="Barrels29" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(264, 280)
+
+[node name="Barrels28" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(456, 216)
+
+[node name="Barrels27" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(232, 152)
+
+[node name="Barrels26" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(392, 216)
+
+[node name="Barrels25" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(200, 216)
+
+[node name="Barrels24" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(104, 216)
+
+[node name="Barrels23" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(104, 280)
+
+[node name="Barrels22" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(232, 88)
+
+[node name="Barrels21" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(136, 88)
+
+[node name="Barrels20" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(40, 216)
+
+[node name="Barrels19" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(40, 152)
+
+[node name="Barrels18" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(0, 280)
+
+[node name="Barrels15" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(456, 152)
+
+[node name="Barrels17" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(296, 24)
+
+[node name="Barrels16" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(72, 152)
+
+[node name="Barrels12" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(104, 24)
+
+[node name="Barrels13" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(72, 24)
+
+[node name="Barrels14" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(0, 120)
+
+[node name="Barrels9" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(40, 88)
+
+[node name="Barrels10" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(0, 88)
+
+[node name="Barrels11" parent="Grounds" instance=ExtResource("3_m8u5f")]
+position = Vector2(72, 56)
 
 [node name="Barrels3" parent="Grounds" instance=ExtResource("3_m8u5f")]
 position = Vector2(296, 88)
