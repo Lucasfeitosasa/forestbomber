@@ -10,6 +10,8 @@ var max_bombs_at_once = 1
 @onready var raycasts: Raycasts = $Raycasts
 @onready var bomb_placement_system: BombPlacementSystem = $BombPlacementSystem
 
+
+
 func _ready():
 	state_machine.Initialize(self)
 	pass 
@@ -74,11 +76,37 @@ func AnimDirection() -> String:
 	else:
 		return "side"
 
+
+
 func die():
+	set_physics_process(false)
 	animation_player.play("die")
 	direction = Vector2.ZERO
+	PlayerHud.show_game_over_screen()
+	
 	set_process_input(false)
+
+
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animation_player.animation == "die":
-		queue_free()
+		set_physics_process(false)
+		set_process(false)
+		set_process_input(false)
+		collision_layer = 0
+		collision_mask = 0
+
+
+func revive_player():
+	show()
+		# Reinicia a animação
+	animation_player.play("idle_down")
+	global_position = Vector2.ZERO # opcional, pois o manager vai definir a posição correta
+	direction = Vector2.ZERO
+	cardinal_direction = Vector2.DOWN
+	collision_layer = 1
+	collision_mask = (1 << 2) | (1 << 3) | (1 << 4)
+	
+	set_process(true)
+	set_physics_process(true)
+	set_process_input(true)

@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8aumecrfnepb"]
+
+[ext_resource type="Script" uid="uid://cn5ipnujccy1y" path="res://GUI/pause_menu/pause_menu.gd" id="1_vhkkt"]
+[ext_resource type="FontFile" uid="uid://btvv7o21hrit" path="res://TitleScene/font/PixelGameFont.ttf" id="2_xyt8q"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vhkkt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 0.831373)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -68.0
+offset_right = 77.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Button_Title" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xyt8q")
+text = "Menu principal"
+
+[node name="Button_Save" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xyt8q")
+text = "Salvar
+"
+
+[node name="Button_Load" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xyt8q")
+text = "Carregar"

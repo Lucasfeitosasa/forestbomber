@@ -5,9 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://55fxbsuw8j2d" path="res://TitleScene/audio/waves.mp3" id="2_88d1l"]
 [ext_resource type="Texture2D" uid="uid://cqbew0rwf5pd3" path="res://TitleScene/sprites/Sem Título-1.png" id="2_d43d1"]
 [ext_resource type="AudioStream" uid="uid://ds3dfy1v5u861" path="res://TitleScene/audio/menu_focus.wav" id="3_cx0ot"]
-[ext_resource type="FontFile" uid="uid://bpvr3yrsyaiyl" path="res://TitleScene/font/Gamer.ttf" id="5_88d1l"]
+[ext_resource type="FontFile" uid="uid://btvv7o21hrit" path="res://TitleScene/font/PixelGameFont.ttf" id="5_88d1l"]
 
-[sub_resource type="FontVariation" id="FontVariation_r4cus"]
+[sub_resource type="FontVariation" id="FontVariation_cx0ot"]
 base_font = ExtResource("5_88d1l")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d43d1"]
@@ -313,8 +313,10 @@ music = ExtResource("2_88d1l")
 button_focus_audio = ExtResource("3_cx0ot")
 
 [node name="TileMap" parent="." instance=ExtResource("1_4bjwq")]
+position = Vector2(24, -80)
 
 [node name="Props" type="Node2D" parent="."]
+position = Vector2(-216, -112)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -349,8 +351,24 @@ offset_right = 73.6
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_r4cus")
-text = "Start Game"
+theme_override_fonts/font = SubResource("FontVariation_cx0ot")
+text = "JOGAR"
+
+[node name="Button_Continue" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.5
+anchor_right = 0.48
+anchor_bottom = 0.5
+offset_left = -78.4
+offset_top = 81.0
+offset_right = 73.6
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_cx0ot")
+text = "CONTINUAR"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
 position = Vector2(-32, 144)
@@ -361,3 +379,6 @@ offset = Vector2(256, -72)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 136)

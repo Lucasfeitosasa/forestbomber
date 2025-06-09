@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dd44noqdhyyqo"]
+[gd_scene load_steps=74 format=3 uid="uid://dd44noqdhyyqo"]
 
 [ext_resource type="Script" uid="uid://bl7wpma7h6x61" path="res://Player/Scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://drc06srxdrjnd" path="res://Player/Sprites/death_Right_Down.png" id="2_gu6f8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dg6g7vluug508" path="res://Player/Scripts/state_idle.gd" id="10_apopc"]
 [ext_resource type="Script" uid="uid://bugl6l1x4bfb" path="res://Player/Scripts/state_walk.gd" id="11_5htga"]
 [ext_resource type="Script" uid="uid://bada07r47pmcm" path="res://Player/Scripts/PlayerCamera.gd" id="12_5htga"]
+[ext_resource type="Script" uid="uid://dia7w3yrvu48v" path="res://Player/Scripts/state_death.gd" id="12_dkpta"]
 [ext_resource type="Script" uid="uid://i201l8qn8ufm" path="res://Player/Scripts/raycasts.gd" id="13_gu6f8"]
 [ext_resource type="Script" uid="uid://c6lsggkl44mfy" path="res://Player/Scripts/bomb_placement_system.gd" id="13_p5o4e"]
 
@@ -450,7 +451,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-1, -2)
+position = Vector2(0, 24)
 collision_mask = 28
 script = ExtResource("1_4ntmi")
 
@@ -461,9 +462,7 @@ shape = SubResource("CapsuleShape2D_p5o4e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_3e3ym")
-animation = &"die"
-frame = 7
-frame_progress = 1.0
+animation = &"idle_down"
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("9_00tjw")
@@ -473,6 +472,9 @@ script = ExtResource("10_apopc")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("11_5htga")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("12_dkpta")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("12_5htga")

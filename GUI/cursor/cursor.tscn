@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk43cgoqdut75"]
+
+[ext_resource type="Texture2D" uid="uid://ka34ofhaljag" path="res://GUI/cursor/Mouse_Icons_Outlined (16 x 16).png" id="1_2b1yu"]
+[ext_resource type="Script" uid="uid://du0h0itkarp2u" path="res://GUI/cursor/cursor.gd" id="2_5cy3w"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_2b1yu")
+offset = Vector2(7, 7)
+hframes = 4
+script = ExtResource("2_5cy3w")

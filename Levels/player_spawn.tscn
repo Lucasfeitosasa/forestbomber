@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://bi0doik1wq7pf"]
+
+[ext_resource type="Script" uid="uid://44d5evdd4fl5" path="res://Levels/Scripts/player_spawn.gd" id="1_lyuil"]
+[ext_resource type="Texture2D" uid="uid://c4aw5mtbvu44l" path="res://Player/Sprites/Idle_Down.png" id="1_y6scc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyuil"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5xvq"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3khg4"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3aug"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrdiq"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky80y"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc8dx"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eihov"]
+atlas = ExtResource("1_y6scc")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4vp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyuil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5xvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3khg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3aug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrdiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc8dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eihov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerSpawn" type="Node2D"]
+position = Vector2(0, 24)
+script = ExtResource("1_lyuil")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 1, 0.186, 0.844)
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_g4vp2")

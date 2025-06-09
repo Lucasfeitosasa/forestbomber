@@ -9,7 +9,7 @@
 position = Vector2(0, 16)
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
-position = Vector2(-8, 32)
+position = Vector2(-8, 24)
 
 [node name="Grounds" parent="." groups=["tilemap"] instance=ExtResource("2_wt17y")]
 position = Vector2(-8, -8)
