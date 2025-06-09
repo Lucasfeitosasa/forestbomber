@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hxwr2dngotjx"]
+[gd_scene load_steps=17 format=3 uid="uid://hxwr2dngotjx"]
 
 [ext_resource type="PackedScene" uid="uid://da3of1mdp3o7p" path="res://TitleScene/tile_map.tscn" id="1_4bjwq"]
 [ext_resource type="Script" uid="uid://bdjnjljnbedae" path="res://TitleScene/title_scene.gd" id="1_r4cus"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqbew0rwf5pd3" path="res://TitleScene/sprites/Sem Título-1.png" id="2_d43d1"]
 [ext_resource type="AudioStream" uid="uid://ds3dfy1v5u861" path="res://TitleScene/audio/menu_focus.wav" id="3_cx0ot"]
 [ext_resource type="FontFile" uid="uid://btvv7o21hrit" path="res://TitleScene/font/PixelGameFont.ttf" id="5_88d1l"]
+[ext_resource type="PackedScene" uid="uid://brn44qbjtpr7" path="res://TitleScene/splash_scene.tscn" id="7_75f4d"]
 
 [sub_resource type="FontVariation" id="FontVariation_cx0ot"]
 base_font = ExtResource("5_88d1l")
@@ -376,6 +377,8 @@ sprite_frames = SubResource("SpriteFrames_0vy3h")
 autoplay = "default"
 frame_progress = 0.0155469
 offset = Vector2(256, -72)
+
+[node name="SplashScene" parent="CanvasLayer" instance=ExtResource("7_75f4d")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 4

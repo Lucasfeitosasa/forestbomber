@@ -12,14 +12,14 @@ signal hidden
 
 @onready var button_save: Button = $VBoxContainer/Button_Save
 @onready var button_load: Button = $VBoxContainer/Button_Load
-@onready var button_title: Button = $VBoxContainer/Button_Title  # <-- novo botão
+@onready var button_title: Button = $VBoxContainer/Button_Title 
 
 var is_paused : bool = false
 
 func _ready() -> void:
 	hide_pause_menu()
 
-	# Sons de foco e clique
+
 	button_save.focus_entered.connect(play_audio.bind(button_focus_audio))
 	button_save.pressed.connect(play_select_audio)
 	button_save.pressed.connect(_on_save_pressed)
@@ -47,7 +47,7 @@ func show_pause_menu() -> void:
 	is_paused = true
 	shown.emit()
 
-	button_save.grab_focus() # dá foco automático ao abrir
+	button_save.grab_focus()
 
 
 func hide_pause_menu() -> void:

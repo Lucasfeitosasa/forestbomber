@@ -13,17 +13,18 @@ const START_LEVEL : String = "res://Levels/Area01/01.tscn"
 func _ready() -> void:
 	get_tree().paused = false  
 	LevelManager.level_load_started.connect(exit_title_screen)
-	setup_title_screen()
+	
+	$CanvasLayer/SplashScene.finished.connect(setup_title_screen)
+
 
 func setup_title_screen() -> void:
 	AudioManager.play_music(music)
 
-	# Botão "Novo Jogo"
 	button_new.pressed.connect(start_game)
 	button_new.focus_entered.connect(play_audio.bind(button_focus_audio))
 	button_new.pressed.connect(play_audio.bind(button_press_audio))
 
-	# Botão "Continuar"
+
 	var has_save = SaveManager.get_save_file() != null
 	button_continue.visible = has_save
 	if has_save:

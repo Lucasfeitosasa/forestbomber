@@ -5,7 +5,6 @@ extends Node
 var level_completed := false
 
 func _ready() -> void:
-	# Verifica a cada "check_delay" segundos
 	var check_timer := Timer.new()
 	check_timer.autostart = true
 	check_timer.one_shot = false
@@ -19,5 +18,4 @@ func _check_enemies() -> void:
 	var enemies := get_tree().get_nodes_in_group("enemy")
 	if enemies.is_empty():
 		level_completed = true
-		# Transição para a próxima fase
 		LevelManager.load_new_level(next_level_path)

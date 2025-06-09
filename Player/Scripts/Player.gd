@@ -99,9 +99,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func revive_player():
 	show()
-		# Reinicia a animação
 	animation_player.play("idle_down")
-	global_position = Vector2.ZERO # opcional, pois o manager vai definir a posição correta
+	global_position = Vector2.ZERO
 	direction = Vector2.ZERO
 	cardinal_direction = Vector2.DOWN
 	collision_layer = 1
