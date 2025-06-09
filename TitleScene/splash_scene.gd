@@ -8,3 +8,4 @@ func _ready() -> void:
 
 func _on_animation_finished(_name: String) -> void:
 	finished.emit()
+	

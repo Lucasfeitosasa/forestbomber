@@ -12,9 +12,10 @@ const START_LEVEL : String = "res://Levels/Area01/01.tscn"
 
 func _ready() -> void:
 	get_tree().paused = false  
-	LevelManager.level_load_started.connect(exit_title_screen)
 	
-	$CanvasLayer/SplashScene.finished.connect(setup_title_screen)
+	LevelManager.level_load_started.connect(exit_title_screen)
+	$CanvasLayer/SplashScene.finished.connect( setup_title_screen )
+	pass
 
 
 func setup_title_screen() -> void:
@@ -47,7 +48,7 @@ func continue_game() -> void:
 	SaveManager.load_game()
 
 func exit_title_screen() -> void:
-	queue_free() 
+	self.queue_free()
 
 func play_audio(_a : AudioStream) -> void:
 	audio_stream_player.stream = _a

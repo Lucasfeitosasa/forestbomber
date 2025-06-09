@@ -17,22 +17,23 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Cursor="*res://GUI/cursor/cursor.tscn"
+AudioManager="*res://00_globals/global_audio_manager.gd"
 LevelManager="*res://00_globals/global_level_manager.gd"
 PlayerHud="*res://GUI/player_hud/player_hud.tscn"
 PlayerManager="*res://00_globals/global_player_manager.gd"
 SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
-ShowCongrats="*res://GUI/player_hud/show_congrats.tscn"
 SaveManager="*res://00_globals/global_save_manager.gd"
 PauseMenu="*res://GUI/pause_menu/PauseMenu.tscn"
-AudioManager="*res://00_globals/global_audio_manager.gd"
+Cursor="*res://GUI/cursor/cursor.tscn"
+ShowCongrats="*res://GUI/player_hud/show_congrats.tscn"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/mode=3
+window/size/window_width_override=1440
+window/size/window_height_override=810
 window/stretch/mode="viewport"
 
 [global_group]
