@@ -36,10 +36,22 @@ func _process(delta):
 	
 	pass 
 
-func _physics_process( delta ):
+func clamp_position_within_bounds():
+	var bounds = LevelManager.current_tilemap_bounds
+	if bounds.size() == 2:
+		var margin = 8  # evita que o jogador encoste totalmente na borda
+		global_position.x = clamp(global_position.x, bounds[0].x + margin, bounds[1].x - margin)
+		global_position.y = clamp(global_position.y, bounds[0].y + margin, bounds[1].y - margin)
+
+
+func _physics_process(delta):
+	# lógica de movimento do player
 	move_and_slide()
 
+	# restringe aos limites do mapa
+	clamp_position_within_bounds()
 
+	
 func SetDirection() -> bool:
 	var new_dir : Vector2 = cardinal_direction
 	if direction == Vector2.ZERO:

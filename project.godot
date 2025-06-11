@@ -39,6 +39,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 enemy=""
+player=""
+explosion=""
 
 [input]
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkw1uu0o1tq61"]
+
+[ext_resource type="Texture2D" uid="uid://d2qv6dcndbgto" path="res://Tile Maps/Sprites/Barrels.png" id="1_8uhwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5e18"]
+atlas = ExtResource("1_8uhwl")
+region = Rect2(0, 56, 64, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41wub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5e18")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at8p4"]
+size = Vector2(32, 32)
+
+[node name="BarrelsProp" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 105
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5)
+sprite_frames = SubResource("SpriteFrames_41wub")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_at8p4")

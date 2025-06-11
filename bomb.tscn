@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3tha"]
-size = Vector2(32, 32)
+size = Vector2(48, 40)
 
 [node name="Bomb" type="StaticBody2D"]
 collision_layer = 8
@@ -55,15 +55,14 @@ collision_mask = 17
 script = ExtResource("1_4fn8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.84217e-14, -8)
-scale = Vector2(1.81133, 1.81133)
+position = Vector2(0, -6)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r0wls")
 autoplay = "default"
 frame = 4
 frame_progress = 0.627995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_a3tha")
 
 [node name="Timer" type="Timer" parent="."]
