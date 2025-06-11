@@ -1,7 +1,8 @@
-[gd_scene load_steps=58 format=3 uid="uid://sqrot33gtrld"]
+[gd_scene load_steps=59 format=3 uid="uid://sqrot33gtrld"]
 
 [ext_resource type="Script" uid="uid://blara3qhgdx8o" path="res://enemy/Goblin/goblin.gd" id="1_uubcx"]
 [ext_resource type="Texture2D" uid="uid://bhjnidq0i0fwf" path="res://enemy/Goblin/goblins_base_male9.png" id="2_7mb0r"]
+[ext_resource type="PackedScene" uid="uid://d4iei6b7k8lo3" path="res://bomb.tscn" id="2_e8bo1"]
 [ext_resource type="Texture2D" uid="uid://xadweiy0w2d" path="res://enemy/Goblin/goblins_base_male10.png" id="3_e8bo1"]
 [ext_resource type="Texture2D" uid="uid://h3pbadj5bmt" path="res://enemy/Goblin/goblins_base_male11.png" id="4_02rdj"]
 [ext_resource type="Texture2D" uid="uid://fp8gvr32mi0p" path="res://enemy/Goblin/goblins_base_male12.png" id="5_012j0"]
@@ -343,13 +344,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uubcx"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mb0r"]
+size = Vector2(32, 32)
 
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 64
 collision_mask = 61
 script = ExtResource("1_uubcx")
+bomb_scene = ExtResource("2_e8bo1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1dcl8")
@@ -361,7 +363,7 @@ collision_layer = 64
 collision_mask = 61
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 7)
-shape = SubResource("CapsuleShape2D_uubcx")
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_7mb0r")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -2,6 +2,8 @@ extends Area2D
 
 class_name CentralExplosion
 
+@onready var sound_explosion = $sound_explosion
+
 @onready var raycasts: Array[RayCast2D] = [
 	$RayCasts/RayCastUp,
 	$RayCasts/RayCastRight,
@@ -41,6 +43,7 @@ func check_raycast_for_direction(animation_name: String, raycast: RayCast2D, ani
 		var collider = raycast.get_collider()
 		if size_of_explosion != null:
 			create_explosion_for_size(size_of_explosion, animation_name, animation_direction)
+		sound_explosion.play()
 		execute_explosion_collision(collider)
 
 

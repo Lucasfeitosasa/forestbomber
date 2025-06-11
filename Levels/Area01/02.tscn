@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://ct2r336v3c87v"]
+[gd_scene load_steps=51 format=3 uid="uid://ct2r336v3c87v"]
 
 [ext_resource type="Script" uid="uid://bf3sqr55gkhmw" path="res://Levels/Scripts/level.gd" id="1_a2klq"]
 [ext_resource type="PackedScene" uid="uid://cnyhrbkxy4tnt" path="res://Tile Maps/grounds.tscn" id="1_xflnv"]
@@ -27,7 +27,6 @@
 [ext_resource type="Script" uid="uid://dl50kvd3akf7b" path="res://Levels/Scripts/level_transition.gd" id="23_pmxi7"]
 [ext_resource type="PackedScene" uid="uid://dl4qxuve83tc7" path="res://enemy/Slime/slime.tscn" id="23_xflnv"]
 [ext_resource type="PackedScene" uid="uid://dkw1uu0o1tq61" path="res://TitleScene/props/barrels_prop.tscn" id="27_abg8o"]
-[ext_resource type="PackedScene" uid="uid://sqrot33gtrld" path="res://enemy/Goblin/goblin.tscn" id="28_45xa8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2ied"]
 texture = ExtResource("2_d1jyu")
@@ -2126,87 +2125,115 @@ position = Vector2(8, -32)
 
 [node name="BarrelsProp" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(24, 224)
+collision_mask = 0
 
 [node name="BarrelsProp2" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(24, 160)
+collision_mask = 0
 
 [node name="BarrelsProp3" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(24, 96)
+collision_mask = 0
 
 [node name="BarrelsProp4" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(24, 32)
+collision_mask = 0
 
 [node name="BarrelsProp5" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(88, 224)
+collision_mask = 0
 
 [node name="BarrelsProp6" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(152, 224)
+collision_mask = 0
 
 [node name="BarrelsProp7" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(216, 224)
+collision_mask = 0
 
 [node name="BarrelsProp8" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(280, 224)
+collision_mask = 0
 
 [node name="BarrelsProp9" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(344, 224)
+collision_mask = 0
 
 [node name="BarrelsProp10" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(408, 224)
+collision_mask = 0
 
 [node name="BarrelsProp11" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(408, 160)
+collision_mask = 0
 
 [node name="BarrelsProp12" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(408, 96)
+collision_mask = 0
 
 [node name="BarrelsProp13" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(408, 32)
+collision_mask = 0
 
 [node name="BarrelsProp14" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(344, 32)
+collision_mask = 0
 
 [node name="BarrelsProp15" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(344, 160)
+collision_mask = 0
 
 [node name="BarrelsProp16" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(344, 96)
+collision_mask = 0
 
 [node name="BarrelsProp17" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(280, 160)
+collision_mask = 0
 
 [node name="BarrelsProp18" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(216, 160)
+collision_mask = 0
 
 [node name="BarrelsProp19" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(152, 160)
+collision_mask = 0
 
 [node name="BarrelsProp20" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(88, 160)
+collision_mask = 0
 
 [node name="BarrelsProp21" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(88, 96)
+collision_mask = 0
 
 [node name="BarrelsProp22" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(152, 96)
+collision_mask = 0
 
 [node name="BarrelsProp23" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(216, 96)
+collision_mask = 0
 
 [node name="BarrelsProp24" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(280, 96)
+collision_mask = 0
 
 [node name="BarrelsProp25" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(280, 32)
+collision_mask = 0
 
 [node name="BarrelsProp26" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(88, 32)
+collision_mask = 0
 
 [node name="BarrelsProp27" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(152, 32)
+collision_mask = 0
 
 [node name="BarrelsProp28" parent="props" instance=ExtResource("27_abg8o")]
 position = Vector2(216, 32)
+collision_mask = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 16
@@ -2227,6 +2254,3 @@ shape = SubResource("RectangleShape2D_45xa8")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(503, 96)
 shape = SubResource("RectangleShape2D_45xa8")
-
-[node name="Goblin" parent="." instance=ExtResource("28_45xa8")]
-position = Vector2(126, 90)

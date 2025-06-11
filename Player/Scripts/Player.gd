@@ -9,6 +9,7 @@ var max_bombs_at_once = 1
 @onready var state_machine : PlayerStateMachine = $StateMachine
 @onready var raycasts: Raycasts = $Raycasts
 @onready var bomb_placement_system: BombPlacementSystem = $BombPlacementSystem
+@onready var sound_die = $sound_die
 
 
 
@@ -39,16 +40,15 @@ func _process(delta):
 func clamp_position_within_bounds():
 	var bounds = LevelManager.current_tilemap_bounds
 	if bounds.size() == 2:
-		var margin = 8  # evita que o jogador encoste totalmente na borda
+		var margin = 8  
 		global_position.x = clamp(global_position.x, bounds[0].x + margin, bounds[1].x - margin)
 		global_position.y = clamp(global_position.y, bounds[0].y + margin, bounds[1].y - margin)
 
 
 func _physics_process(delta):
-	# lógica de movimento do player
+
 	move_and_slide()
 
-	# restringe aos limites do mapa
 	clamp_position_within_bounds()
 
 	
@@ -96,8 +96,8 @@ func die():
 	direction = Vector2.ZERO
 	PlayerHud.show_game_over_screen()
 	
+	sound_die.play()
 	set_process_input(false)
-
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

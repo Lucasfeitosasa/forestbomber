@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dd44noqdhyyqo"]
+[gd_scene load_steps=77 format=3 uid="uid://dd44noqdhyyqo"]
 
 [ext_resource type="Script" uid="uid://bl7wpma7h6x61" path="res://Player/Scripts/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://drc06srxdrjnd" path="res://Player/Sprites/death_Right_Down.png" id="2_gu6f8"]
@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://dia7w3yrvu48v" path="res://Player/Scripts/state_death.gd" id="12_dkpta"]
 [ext_resource type="Script" uid="uid://i201l8qn8ufm" path="res://Player/Scripts/raycasts.gd" id="13_gu6f8"]
 [ext_resource type="Script" uid="uid://c6lsggkl44mfy" path="res://Player/Scripts/bomb_placement_system.gd" id="13_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://dxa7uatvmna16" path="res://Player/Sounds/player_walking.mp3" id="16_b1ygp"]
+[ext_resource type="AudioStream" uid="uid://c5d1arww7uanb" path="res://Player/Sounds/game-over-arcade-6435.mp3" id="16_lfmf2"]
+[ext_resource type="Script" uid="uid://e4yn3p7exkvv" path="res://Player/sound_walking.gd" id="17_o28un"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5o4e"]
 radius = 5.0
@@ -536,5 +539,14 @@ collision_mask = 28
 
 [node name="BombPlacementSystem" type="Node2D" parent="."]
 script = ExtResource("13_p5o4e")
+
+[node name="sound_walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_b1ygp")
+volume_db = 4.0
+script = ExtResource("17_o28un")
+
+[node name="sound_die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_lfmf2")
+volume_db = 5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

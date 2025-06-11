@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name EnemyBoss
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@export var collision_tile_layer: int = 2
+@export var collision_tile_layer: int = 3
 @export var speed: float = 25.0
 @export var direction_intersection_change_chance: float = 0.5
 @export var change_direction_timeout: float = 3.0
@@ -17,10 +17,13 @@ var placing_bomb: bool = false
 var tile_map: TileMap
 var run_from_position: Vector2 = Vector2.ZERO
 
+
 func _ready() -> void:
 	tile_map = get_tree().get_first_node_in_group("tilemap")
 	change_sprite_direction(direction)
-	
+
+	animated_sprite_2d.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
+
 func _physics_process(delta: float) -> void:
 	if placing_bomb:
 		return
@@ -32,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		play_bomb_animation()
 		return
 
-	var velocity = direction * speed
+	velocity = direction * speed
 
 	if direction == Vector2.LEFT or direction == Vector2.RIGHT:
 		position.y = roundf(position.y / 16) * 16
@@ -51,6 +54,7 @@ func _physics_process(delta: float) -> void:
 
 	current_change_direction_timeout += delta
 
+
 func play_bomb_animation():
 	if direction.x != 0:
 		animated_sprite_2d.animation = "bomb_side"
@@ -58,11 +62,11 @@ func play_bomb_animation():
 		animated_sprite_2d.animation = "bomb_up"
 	else:
 		animated_sprite_2d.animation = "bomb_down"
-	
+
 	animated_sprite_2d.play()
 
 func _on_AnimatedSprite2D_animation_finished():
-	if animated_sprite_2d.animation.begins_with("bomb_"):
+	if animated_sprite_2d.animation.begins_with("bomb_") and placing_bomb:
 		spawn_bomb()
 		placing_bomb = false
 		change_sprite_direction(direction)
